@@ -564,7 +564,7 @@
         position: relative;
         top: 8%;
         color: white;
-        background: var(--primary-color);
+        background: #426A5A;
         border-radius: 50%;
         display: inline-block;
         transform: skew(45deg);
@@ -608,53 +608,71 @@
     }
 
     /* Error Page */
-@media (max-width: 767px) {
-    .error .clip .shadow {
-        height: 100px;
-    }
+    @media(max-width: 767px) {
 
-    .error .clip:nth-of-type(2) .shadow {
-        width: 80px;
-    }
+        /* Error Page */
+        .error .clip .shadow {
+            height: 100px;
+            /*Contrall*/
+        }
 
-    .error .clip:nth-of-type(1) .shadow,
-    .error .clip:nth-of-type(3) .shadow {
-        width: 100px;
-    }
+        .error .clip:nth-of-type(2) .shadow {
+            width: 80px;
+            /*Contrall play with javascript*/
+        }
 
-    .error .digit {
-        width: 80px;
-        height: 80px;
-        line-height: 80px;
-        font-size: 52px;
-    }
+        .error .clip:nth-of-type(1) .shadow,
+        .error .clip:nth-of-type(3) .shadow {
+            width: 100px;
+            /*Contrall*/
+        }
 
-    .error h2 {
-        font-size: 24px;
-    }
+        .error .digit {
+            width: 80px;
+            /*Contrall*/
+            height: 80px;
+            /*Contrall*/
+            line-height: 80px;
+            /*Contrall*/
+            font-size: 52px;
+        }
 
-    .error .msg {
-        top: -110px;
-        left: 15%;
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        font-size: 18px;
-    }
+        .error h2
 
-    .error span.triangle {
-        top: 70%;
-        right: -3%;
-        border-left: 10px solid #535353;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-    }
+        /*Contrall*/
+            {
+            font-size: 24px;
+        }
 
-    .error .container-error-404 {
-        height: 150px;
-        margin-top: 5%;
+        .error .msg
+
+        /*Contrall*/
+            {
+            top: -110px;
+            left: 15%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+        }
+
+        .error span.triangle
+
+        /*Contrall*/
+            {
+            top: 70%;
+            right: -3%;
+            border-left: 10px solid #535353;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+
+        .error .container-error-404 {
+            height: 150px;
+        }
+
+        /* Error Page */
     }
-}
 
     /*--------------------------------------------Framework --------------------------------*/
 

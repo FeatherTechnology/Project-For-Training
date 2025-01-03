@@ -1,197 +1,97 @@
-<div class="row gutters">
-    <div class="col-12">
-        <div class="branch-div">
-            <button class='btn btn-primary' name='auction_reminder_smsbtn' id='auction_reminder_smsbtn' title='Reminder for today auction group customer'> Send Reminder SMS </button>
+<h1>Inventory Management Dashboard</h1>
 
-            <select name="branch_id" id="branch_id" class="branch-dropdown">
-                <option value="">Choose Branch</option>
-            </select>
-        </div></br>
-        
-        <!----------------------------- CARD START Group List ------------------------------>
-        <div class="card group-list-card" style="display: none;">
-            <div class="card-header" id="group_list_title">
-                <div class="card-title dashboard-count-header">Group List</div>
-            </div>
-            <div class="card-body" id="group_list_body" style="display: none;">
-                <div class="row card-row">
-                    <div class="col-12">
-                        <table id="group_creation_table" class="table custom-table">
-                            <thead>
-                                <tr>
-                                    <th width="50">S.No.</th>
-                                    <th>Group ID</th>
-                                    <th>Group Name</th>
-                                    <th>Chit Value</th>
-                                    <th>Total Month</th>
-                                    <th>Date</th>
-                                    <th>Start Month</th>
-                                    <th>End Month</th>
-                                    <th>Commission(%)</th>
-                                    <th>Branch</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!----------------------------- CARD END Group List ------------------------------>
+<div class="dash">
+    <!-- Sales Report -->
+    <div class="card">
+        <h3>Sales Report</h3>
+        <div id="sales_chart"></div>
+    </div>
 
-        <!----------------------------- CARD START Auction List ------------------------------>
-        <div class="card auction-list-card" style="display: none;">
-            <div class="card-header" id="auction_list_title">
-                <div class="card-title dashboard-count-header">Auction List</div>
-            </div>
-            <div class="card-body" id="auction_list_body" style="display: none;">
-                <div class="row card-row">
-                    <div class="col-12">
-                        <table id="auction_list_table" class="table custom-table">
-                            <thead>
-                                <tr>
-                                    <th width=50>S.No.</th>
-                                    <th>Group ID</th>
-                                    <th>Group Name</th>
-                                    <th>Chit Value</th>
-                                    <th>Total Month</th>
-                                    <th>Date</th>
-                                    <th>Auction Time</th>
-                                    <th>Auction Month</th>
-                                    <th>Branch</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!----------------------------- CARD END Auction List ------------------------------>
+    <!-- Product Details -->
+    <div class="card">
+        <h3>Product Details</h3>
+        <div id="product_chart"></div>
+    </div>
 
-        <!----------------------------- CARD START Collection ------------------------------>
-        <div class="card collection-card" style="display: none;">
-            <div class="card-header" id="collection_title">
-                <div class="card-title dashboard-count-header">Collection</div>
-            </div>
-            <div class="card-body" id="collection_body" style="display: none;">
-                <div class="row card-row">
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <p class="count-head">Total Collection Amount</p>
-                                    <p class="cnt-value-p" id="tot_paid">0</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Category-Wise Sales -->
+    <div class="card">
+        <h3>Category-Wise Sales (%)</h3>
+        <div id="category_chart"></div>
+    </div>
 
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <p class="count-head">Today Collection Amount</p>
-                                    <p class="cnt-value-p" id="today_paid">0</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Category-Wise Quotations -->
+    <div class="card">
+        <h3>Category-Wise Quotations</h3>
+        <div id="quotations_chart"></div>
+    </div>
+</div>
 
-                </div>
-            </div>
-        </div>
-        <!----------------------------- CARD END Collection ------------------------------>
-
-        <!----------------------------- CARD START Settlement ------------------------------>
-        <div class="card settlement-card" style="display: none;">
-            <div class="card-header" id="settlement_title">
-                <div class="card-title dashboard-count-header">Settlement</div>
-            </div>
-            <div class="card-body" id="settlement_body" style="display: none;">
-                <div class="row card-row">
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <p class="count-head">Total Settlement</p>
-                                    <p class="cnt-value-p" id="tot_settle">0</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <p class="count-head">Today Settlement</p>
-                                    <p class="cnt-value-p" id="today_settle">0</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!----------------------------- CARD END Settlement ------------------------------>
-        <!----------------------------- CARD START Collection Summary ------------------------------>
-        <div class="card collection-summary-card" style="display: none;">
-            <div class="card-header" id="coll_summary_title">
-                <div class="card-title dashboard-count-header">Collection Summary</div>
-            </div>
-            <div class="card-body" id="coll_summ_body" style="display: none;">
-                <div class="row card-row">
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <p class="count-head">Current Month Paid</p>
-                                    <p class="cnt-value-p" id="month_paid">0</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <p class="count-head">Current Month Unpaid</p>
-                                    <p class="cnt-value-p" id="month_unpaid">0</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <p class="count-head">Previous Pending Amount</p>
-                                    <p class="cnt-value-p" id="prev_pen_amount">0</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <p class="count-head">Total Outstanding</p>
-                                    <p class="cnt-value-p" id="total_outstanding">0</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!----------------------------- CARD END Collection Summary ------------------------------>
+<!-- Purchase Details Table -->
+<div class="card">
+    <h2>Purchase Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Vendor</th>
+                <th>Category</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Purchase Rate</th>
+                <th>Sales Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Vendor 1</td>
+                <td>Category 1</td>
+                <td>Product 1</td>
+                <td>50</td>
+                <td>$10</td>
+                <td>$15</td>
+            </tr>
+            <tr>
+                <td>Vendor 2</td>
+                <td>Category 2</td>
+                <td>Product 2</td>
+                <td>70</td>
+                <td>$12</td>
+                <td>$18</td>
+            </tr>
+            <tr>
+                <td>Vendor 3</td>
+                <td>Category 3</td>
+                <td>Product 3</td>
+                <td>30</td>
+                <td>$8</td>
+                <td>$12</td>
+            </tr>
+            <tr>
+                <td>Vendor 4</td>
+                <td>Category 4</td>
+                <td>Product 4</td>
+                <td>90</td>
+                <td>$15</td>
+                <td>$20</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Footer with Statistics -->
+<div class="footer">
+    <div>
+        <h4>66</h4>
+        <p>Total Vendors</p>
+    </div>
+    <div>
+        <h4>47</h4>
+        <p>Total Categories</p>
+    </div>
+    <div>
+        <h4>225</h4>
+        <p>Total Products</p>
+    </div>
+    <div>
+        <h4>232</h4>
+        <p>Total Sales</p>
     </div>
 </div>
