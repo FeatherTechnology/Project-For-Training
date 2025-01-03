@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" href="img/bg_none1.png" />
 
 	<!-- Title -->
-	<title>Kanchi Chits Software</title>
+	<title>Feather Software</title>
 
 	<!-- ************************* Vendor Css Files *************-->
 	<link rel="stylesheet" href="vendor/customcss/customstyle.css" />
